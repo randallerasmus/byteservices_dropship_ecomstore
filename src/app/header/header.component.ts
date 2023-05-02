@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import { RouterModule } from '@angular/router';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,11 @@ export class HeaderComponent implements OnInit {
   searchQuery: any;
   user: any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) {
+
+  }
 
   ngOnInit(): void {
     setInterval(() => {
@@ -47,6 +53,10 @@ export class HeaderComponent implements OnInit {
 
   toggleSidenav() {
 
+  }
+
+  contactUs() {
+    this.router.navigate(['/contact-us']);
   }
 }
 
